@@ -8,7 +8,7 @@
 
   <link href="images/palembapang.png" rel="icon" type="image/png">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.css">
 
@@ -78,9 +78,12 @@
                 Layanan Surat
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item btn-sm" href="prosedur">Prosedur Buat Surat Online</a>
-                <a class="dropdown-item btn-sm" href="download">Download Blanko Surat</a>
+                  <a class="dropdown-item btn-sm" href="prosedur">Prosedur Buat Surat Online</a>
+                  <a class="dropdown-item btn-sm" href="download">Download Blanko Surat</a>
                   <a class="dropdown-item btn-sm" href="buat_surat">Buat Surat Online</a>
+                  <hr>
+                  <a class="dropdown-item btn-sm my-0" href="#">Surat Khusus <i class="fa fa-arrow-down"></i></a>
+                  <hr>
                   <a class="dropdown-item btn-sm" href="surat_izin_keramaian">Surat Izin Keramaian</a>
                   <a class="dropdown-item btn-sm" href="surat_kematian">Surat Kematian</a>
                   <a class="dropdown-item btn-sm" href="surat_domisili">Surat Domisili</a>
