@@ -80,7 +80,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item btn-sm" href="prosedur">Prosedur Buat Surat Online</a>
                 <a class="dropdown-item btn-sm" href="download">Download Blanko Surat</a>
-                  <!-- <a class="dropdown-item btn-sm" href="buat_surat">Buat Surat Online</a> -->
+                  <a class="dropdown-item btn-sm" href="buat_surat">Buat Surat Online</a>
                   <a class="dropdown-item btn-sm" href="surat_izin_keramaian">Surat Izin Keramaian</a>
                   <a class="dropdown-item btn-sm" href="surat_kematian">Surat Kematian</a>
                   <a class="dropdown-item btn-sm" href="surat_domisili">Surat Domisili</a>

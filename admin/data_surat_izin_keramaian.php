@@ -57,12 +57,12 @@
             <p>Berita Desa</p>
           </a>
         </li>
-        <!-- <li class="nav-item ">
+        <li class="nav-item ">
           <a class="nav-link" href="data_buat_surat">
             <i class="material-icons">article</i>
             <p>Buat Surat</p>
           </a>
-        </li> -->
+        </li>
         <li class="nav-item active">
           <a class="nav-link" href="data_surat_izin_keramaian">
             <i class="material-icons">article</i>
