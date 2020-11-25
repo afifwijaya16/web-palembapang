@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2020 at 06:31 AM
+-- Generation Time: Nov 25, 2020 at 07:51 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -29,12 +29,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `surat_domisili` (
   `id_surat_domisili` varchar(10) NOT NULL,
-  `ttl` varchar(50) NOT NULL,
-  `status` varchar(25) NOT NULL,
+  `nik` varchar(50) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `tempat_lahir` varchar(50) NOT NULL,
   `agama` varchar(25) NOT NULL,
   `pekerjaan` varchar(25) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `alamat` varchar(50) NOT NULL,
+  `file_surat` varchar(255) NOT NULL,
+  `deskripsi_surat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `surat_domisili`
+--
+
+INSERT INTO `surat_domisili` (`id_surat_domisili`, `nik`, `nama`, `tanggal_lahir`, `tempat_lahir`, `agama`, `pekerjaan`, `alamat`, `file_surat`, `deskripsi_surat`) VALUES
+('SD-0001', '123', 'Yoga', '2020-11-25', 'bandar lampung', 'Islam', 'Dosen', 'Bandar Lampung', 'files/youtubecom-1024x576.jpg', 'Ingin membuat surat domisili');
 
 -- --------------------------------------------------------
 
@@ -97,11 +108,20 @@ INSERT INTO `surat_kematian` (`id_kematian`, `nama`, `nik`, `umur`, `pekerjaan`,
 CREATE TABLE `surat_usaha` (
   `id_surat_usaha` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `ttl` varchar(50) NOT NULL,
-  `jenis_kelamin` varchar(25) NOT NULL,
-  `pekerjaan` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `nik` varchar(50) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `nama_usaha` varchar(255) NOT NULL,
+  `keterangan_usaha` text NOT NULL,
+  `jumlah_modal_usaha` varchar(50) NOT NULL,
+  `file_surat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `surat_usaha`
+--
+
+INSERT INTO `surat_usaha` (`id_surat_usaha`, `nama`, `nik`, `alamat`, `nama_usaha`, `keterangan_usaha`, `jumlah_modal_usaha`, `file_surat`) VALUES
+('SIU-0001', 'Yoga', '123', 'Bandar Lampung', 'Pempek Nabila', 'Menjual Hasil Olahan ikan', '35000000', 'files/youtubecom-1024x576.jpg');
 
 -- --------------------------------------------------------
 

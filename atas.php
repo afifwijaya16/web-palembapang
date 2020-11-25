@@ -83,6 +83,8 @@
                   <!-- <a class="dropdown-item btn-sm" href="buat_surat">Buat Surat Online</a> -->
                   <a class="dropdown-item btn-sm" href="surat_izin_keramaian">Surat Izin Keramaian</a>
                   <a class="dropdown-item btn-sm" href="surat_kematian">Surat Kematian</a>
+                  <a class="dropdown-item btn-sm" href="surat_domisili">Surat Domisili</a>
+                  <a class="dropdown-item btn-sm" href="surat_usaha">Surat Izin Usaha</a>
               </div>
             </div>
           </li>

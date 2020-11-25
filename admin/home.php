@@ -75,11 +75,36 @@
               <p>Berita Desa</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="data_buat_surat">
               <i class="material-icons">article</i>
               <p>Buat Surat</p>
             </a>
+            </li> -->
+            <li class="nav-item ">
+          <a class="nav-link" href="data_surat_izin_keramaian">
+            <i class="material-icons">article</i>
+            <p>Surat Izin Keramaian</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="data_surat_kematian">
+            <i class="material-icons">article</i>
+            <p>Surat Kematian</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="data_surat_domisili">
+            <i class="material-icons">article</i>
+            <p>Surat Domisili</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="data_surat_usaha">
+            <i class="material-icons">article</i>
+            <p>Surat Izin Usaha</p>
+          </a>
+        </li>
               <li class="nav-item ">
             <a class="nav-link" href="grafik_penduduk">
               <i class="material-icons">addchart</i>
