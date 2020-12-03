@@ -10,84 +10,90 @@
     </div>
     <div class="sidebar-wrapper">
       <ul class="nav">
-        <li class="nav-item active  ">
+        <li class="nav-item">
           <a class="nav-link" href="home">
             <i class="material-icons">dashboard</i>
             <p>Dashboard</p>
           </a>
         </li>
-
-        <li class="nav-item ">
-          <a class="nav-link" href="data_informasi">
-            <i class="material-icons">credit_card</i>
-            <p>Informasi Desa</p>
+        <li class="nav-item">
+          <a href="#penduduksub" data-toggle="collapse" aria-expanded="false" class="nav-link">
+            <i class="material-icons">supervised_user_circle</i>
+            <p>Data Kependudukan</p>
           </a>
+          <ul class="collapse list-unstyled" id="penduduksub">
+            <li class="nav-item">
+              <a class="nav-link" href="data_adminis">Data Administrasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_penduduk">Data Penduduk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="grafik_penduduk">
+                Grafik Penduduk
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_galeri">
-            <i class="material-icons">account_balance</i>
-            <p>Galeri Desa</p>
+        <li class="nav-item">
+          <a href="#publikasisub" data-toggle="collapse" aria-expanded="false" class="nav-link">
+            <i class="material-icons">supervised_user_circle</i>
+            <p>Publikasi</p>
           </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_adminis">
-            <i class="material-icons">description</i>
-            <p>Data Administratif</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_pengaduan">
-            <i class="material-icons">book</i>
-            <p>Pengaduan</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_download">
-            <i class="material-icons">get_app</i>
-            <p>Download Surat</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_berita">
-            <i class="material-icons">dns</i>
-            <p>Berita Desa</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_buat_surat">
-            <i class="material-icons">article</i>
-            <p>Buat Surat</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_surat_izin_keramaian">
-            <i class="material-icons">article</i>
-            <p>Surat Izin Keramaian</p>
-          </a>
+          <ul class="collapse list-unstyled" id="publikasisub">
+            <li class="nav-item">
+              <a class="nav-link" href="data_informasi">Informasi Desa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_galeri">Galeri Desa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_berita">
+                <p>Berita Desa</p>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="data_surat_kematian">
-            <i class="material-icons">article</i>
-            <p>Surat Kematian</p>
+          <a href="#layanansuratsub" data-toggle="collapse" aria-expanded="false" class="nav-link">
+            <i class="material-icons">book</i>
+            <p>Layanan Surat</p>
           </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_surat_domisili">
-            <i class="material-icons">article</i>
-            <p>Surat Domisili</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="data_surat_usaha">
-            <i class="material-icons">article</i>
-            <p>Surat Izin Usaha</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="grafik_penduduk">
-            <i class="material-icons">addchart</i>
-            <p>Grafik Penduduk</p>
-          </a>
+          <ul class="nav collapse list-unstyled" id="layanansuratsub">
+            <li class="nav-item">
+              <a class="nav-link" href="data_pengaduan">Pengaduan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_download">
+                <p>Download Surat</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="data_buat_surat">
+                <p>Buat Surat</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="data_surat_izin_keramaian">
+                <p>Surat Izin Keramaian</p>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="data_surat_kematian">
+                <p>Surat Kematian</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_surat_domisili">
+                <p>Surat Domisili</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="data_surat_usaha">
+                <p>Surat Izin Usaha</p>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="logout">

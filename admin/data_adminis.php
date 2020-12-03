@@ -33,12 +33,9 @@
               <h3 class="card-title">Kembali</h3>
             </div>
           </a>
-
         </div>
       </div>
     </div>
-
-
   </div>
 </div>
 

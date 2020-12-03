@@ -1,30 +1,14 @@
 <?php session_start(); ?>
 
-<?php
+<?php include "atas.php"; include "config.php"; ?>
 
- include "atas.php";
- include "config.php";
-?>
-
-
-
-<?php
-
-
-
- if(isset($_SESSION['username'])){ 
-     
-         
-           
-         
-         ?>
+<?php if(isset($_SESSION['username'])){ ?>
 
 
 
 
 <div class="wrapper ">
   <div class="sidebar" data-color="purple" data-background-color="white" data-image="assets/img/sidebar-1.jpg">
-
     <div class="logo">
       <a href="" class="simple-text logo-normal">
         MENU
@@ -38,16 +22,16 @@
             <p>Dashboard</p>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a href="#penduduksub" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="material-icons">supervised_user_circle</i>
             <p>Data Kependudukan</p>
           </a>
-          <ul class="collapse list-unstyled" id="penduduksub">
+          <ul class="nav collapse list-unstyled" id="penduduksub">
             <li class="nav-item">
               <a class="nav-link" href="data_adminis">Data Administrasi</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="data_penduduk">Data Penduduk</a>
             </li>
             <li class="nav-item">
@@ -76,13 +60,13 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="#layanansuratsub" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="material-icons">book</i>
             <p>Layanan Surat</p>
           </a>
-          <ul class="nav collapse list-unstyled" id="layanansuratsub">
-            <li class="nav-item active">
+          <ul class="collapse list-unstyled" id="layanansuratsub">
+            <li class="nav-item">
               <a class="nav-link" href="data_pengaduan">Pengaduan</a>
             </li>
             <li class="nav-item ">
@@ -155,87 +139,66 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary" align="center">
-
-                <h4 class="card-title ">Data Pengaduan </h4>
-
-                <p class="card-category"> Data Pengaduan Dari Masyarakat</p>
-
-
+                <a href="data_penduduk_input">
+                  <button type="button" class="btn btn-success">Tambah Data Penduduk </button>
+                </a>
+                <h4 class="card-title ">Data Penduduk </h4>
               </div>
               <div class="card-body">
-
-
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                        Tanggal
+                        NIK
                       </th>
                       <th>
-                        Nama Pelapor
+                        KK
                       </th>
-                      <th align="center">
-                        Deskripsi
+                      <th>
+                        Nama
                       </th>
-                      <th align="center">
-                        Gambar
+                      <th>
+                        Ttl
+                      </th>
+                      <th>
+                        Agama
+                      </th>
+                      <th>
+                        Jenis Kelamin
                       </th>
                       <th>
                         Tools
                       </th>
                     </thead>
                     <tbody>
-                      <?php
-    
-    
-
-    $sql  = "SELECT * FROM tbl_pengaduan ORDER BY tgl ";
-	$rest = mysqli_query($koneksi,$sql);
-
-	while($data = mysqli_fetch_assoc($rest) )
-	{
-	
-	 
-						?>
-
+                      <?php $sql  = "SELECT * FROM tb_penduduk"; $rest = mysqli_query($koneksi,$sql);
+                        while($data = mysqli_fetch_assoc($rest) ) { ?>
                       <tr>
-
-                        <td align="center"> <?php echo $data['tgl'];?></td>
-
+                        <td align="center"> <?php echo $data['nik'];?></td>
+                        <td align="center"> <?php echo $data['kk'];?></td>
                         <td align="center"> <?php echo $data['nama'];?></td>
-                        <td align="center"> <?php echo $data['deskrispi'];?></td>
-
-
-                        <td align="center">
-                          <a href="../<?php echo $data['gambar']; ?>" target="_blank">
-                            <img src="../<?php echo $data['gambar']; ?>" class="col-sm-6 img-thumbnail" />
-
-                          </a>
+                        <td align="center"> <?php echo $data['tempat_lahir'];?>, <?php echo $data['tanggal_lahir'];?>
                         </td>
+                        <td align="center"> <?php echo $data['agama'];?></td>
+                        <td align="center"> <?php echo $data['jenis_kelamin'];?></td>
                         <td align="center">
+                          <!-- <a href="edit_penduduk?id=<?php echo $data['id_penduduk']?>">
+                            <button type="button" rel="tooltip" title="Edit Data"
+                              class="btn btn-primary btn-link btn-sm">
+                              <i class="material-icons">edit</i>
+                            </button>
+                          </a> -->
 
-
-                          <a href="confirm_hapus_pengaduan?id=<?php echo $data['id_pengaduan']?>">
+                          <a href="confirm_hapus_penduduk?id=<?php echo $data['id_penduduk']?>">
 
                             <button type="button" rel="tooltip" title="Hapus Data"
                               class="btn btn-danger btn-link btn-sm">
                               <i class="material-icons">close</i>
                             </button>
                           </a>
-
-
-
-
-
                         </td>
-
-
-
                       </tr>
-
-                      <?php
-    }
-        ?>
+                      <?php } ?>
                     </tbody>
                   </table>
                 </div>

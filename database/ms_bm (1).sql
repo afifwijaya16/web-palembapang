@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Nov 2020 pada 09.05
+-- Waktu pembuatan: 03 Des 2020 pada 16.50
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 5.6.39
 
@@ -30,12 +30,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `surat_domisili` (
   `id_surat_domisili` varchar(10) NOT NULL,
-  `ttl` varchar(50) NOT NULL,
-  `status` varchar(25) NOT NULL,
+  `nik` varchar(50) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `tempat_lahir` varchar(50) NOT NULL,
   `agama` varchar(25) NOT NULL,
   `pekerjaan` varchar(25) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `alamat` varchar(50) NOT NULL,
+  `file_surat` varchar(255) NOT NULL,
+  `deskripsi_surat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `surat_domisili`
+--
+
+INSERT INTO `surat_domisili` (`id_surat_domisili`, `nik`, `nama`, `tanggal_lahir`, `tempat_lahir`, `agama`, `pekerjaan`, `alamat`, `file_surat`, `deskripsi_surat`) VALUES
+('SD-0001', '1805181906870002', 'Nabilah Syaufii', '2020-05-05', 'Bandar Lampung', 'Islam', 'Mahasiswa', 'Jl. Keramat No.19 Kedaton', 'files/11.PNG', 'Saya ingin membuat surat keterangan domisili untuk kepentingan pekerjaan');
 
 -- --------------------------------------------------------
 
@@ -45,14 +56,24 @@ CREATE TABLE `surat_domisili` (
 
 CREATE TABLE `surat_izin_keramaian` (
   `id_keramaian` varchar(10) NOT NULL,
+  `nik` varchar(50) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `umur` varchar(10) NOT NULL,
   `pekerjaan` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `tokoh_pemuda` varchar(50) NOT NULL,
   `tokoh_masyarakat` varchar(50) NOT NULL,
-  `tokoh_agama` varchar(50) NOT NULL
+  `tokoh_agama` varchar(50) NOT NULL,
+  `file_surat` varchar(255) NOT NULL,
+  `deskripsi_surat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `surat_izin_keramaian`
+--
+
+INSERT INTO `surat_izin_keramaian` (`id_keramaian`, `nik`, `nama`, `umur`, `pekerjaan`, `alamat`, `tokoh_pemuda`, `tokoh_masyarakat`, `tokoh_agama`, `file_surat`, `deskripsi_surat`) VALUES
+('SIK-0001', '1805181906870002', 'Nabilah Syaufii', '40', 'Mahasiswa', 'Jl. Keramat No.19 Kedaton', 'H. Marzuki', 'Sudarma Ali', 'H. Mansyur', 'files/11.PNG', 'Saya ingin membuat surat izin keramaian untuk pernikahan putri saya pada tanggal 30 November 2020');
 
 -- --------------------------------------------------------
 
@@ -63,10 +84,21 @@ CREATE TABLE `surat_izin_keramaian` (
 CREATE TABLE `surat_kematian` (
   `id_kematian` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
+  `nik` varchar(50) NOT NULL,
   `umur` varchar(10) NOT NULL,
   `pekerjaan` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `alamat` varchar(50) NOT NULL,
+  `nama_pelapor` varchar(50) NOT NULL,
+  `deskripsi_surat` text NOT NULL,
+  `file_surat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `surat_kematian`
+--
+
+INSERT INTO `surat_kematian` (`id_kematian`, `nama`, `nik`, `umur`, `pekerjaan`, `alamat`, `nama_pelapor`, `deskripsi_surat`, `file_surat`) VALUES
+('SK-0001', 'Nabilah Syaufii', '1805181906870002', '20', 'Mahasiswa', 'Jl. Keramat No.19 Kedaton', 'Muntadz Siro (Orang Tua)', 'Sakit', 'files/11.PNG');
 
 -- --------------------------------------------------------
 
@@ -77,11 +109,20 @@ CREATE TABLE `surat_kematian` (
 CREATE TABLE `surat_usaha` (
   `id_surat_usaha` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `ttl` varchar(50) NOT NULL,
-  `jenis_kelamin` varchar(25) NOT NULL,
-  `pekerjaan` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `nik` varchar(50) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `nama_usaha` varchar(255) NOT NULL,
+  `keterangan_usaha` text NOT NULL,
+  `jumlah_modal_usaha` varchar(50) NOT NULL,
+  `file_surat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `surat_usaha`
+--
+
+INSERT INTO `surat_usaha` (`id_surat_usaha`, `nama`, `nik`, `alamat`, `nama_usaha`, `keterangan_usaha`, `jumlah_modal_usaha`, `file_surat`) VALUES
+('SIU-0001', 'Nabilah Syaufii', '1805181906870002', 'Jl. Keramat No.19 Kedaton', 'Warung Kelontongan', 'Surat Keterangan Usaha', '10000000', 'files/11.PNG');
 
 -- --------------------------------------------------------
 
@@ -126,12 +167,7 @@ CREATE TABLE `tbl_buat_surat` (
 --
 
 INSERT INTO `tbl_buat_surat` (`id_surat`, `nik`, `nama_lengkap`, `alamat`, `no_handpone`, `jenis_surat`, `file_surat`, `deskripsi_surat`) VALUES
-('SR-0001', 2147483647, 'Nabila Syaufii', 'Kedaton', '089976805543', '', 'files/SURAT DOMISILI.pdf', 'Membuat surat Domisili'),
-('SR-0002', 123456, 'yoga', 'Bandar LAmpung', '089978789878', '', 'files/Doc1.pdf', 'Saya ingin membuat surat KTP sementara'),
-('SR-0003', 20202, 'tes', 'Desa Gedung Karyajitu', '082282108836', 'jenis_surat', 'files/admin.jpg', 'esrd'),
-('SR-0005', 10101, 'yoga', 'aaaa', '082282108836', 'Surat Ket. Domisili', 'files/fif.jpg', 'Saya ingin membuat surat KTP sementara'),
-('SR-0006', 10101, 'eka', 'Desa Gedung Karyajitu', '082282108836', 'Surat Ket. Tidak Mampu', 'files/fiona.jpg', 'Saya ingin membuat surat jalan'),
-('SR-0007', 10101, 'Yoga Permana', 'Desa Gedung Karyajitu', '089978789878', 'Surat Ket. Kehilangan', 'files/Kajian Literatur dan Teori Sosial dalam Penelitian (Astika, Uswa).pdf', 'Saya ingin membuat surat KTP sementara');
+('SR-0001', 2147483647, 'Nabilah Syaufii', 'Jl. Keramat No.19 Kedaton', '089978789878', 'Surat Ket. Domisili', 'files/11.PNG', 'Saya ingin membuat surat keterangan domisili untuk kepentinganm ');
 
 -- --------------------------------------------------------
 
@@ -341,8 +377,7 @@ CREATE TABLE `tbl_galeri` (
 --
 
 INSERT INTO `tbl_galeri` (`id_galeri`, `judul`, `tgl_galeri`, `deskripsi`, `gambar`) VALUES
-('GL-0002', 'Peresmian Sumur Bor', '2020-09-28', 'Kepala Desa Palembapang beserta staf desa melakukan peresmian sumur bor untuk wilayah dusun 2 Desa Palembapang. Pembangunan sumur bor merupakan program kerja pemerintah desa dengan memanfaatkan dana desa untuk kesejahteraan masyarakat yang masih kesulitan dalam mendapatkan air bersih.', 'files/IMG-20200531-WA0013.jpg'),
-('GL-0003', 'qqqq', '2020-11-19', 'Kebakaran Hutan', 'files/fiona.jpg');
+('GL-0002', 'Peresmian Sumur Bor', '2020-09-28', 'Kepala Desa Palembapang beserta staf desa melakukan peresmian sumur bor untuk wilayah dusun 2 Desa Palembapang. Pembangunan sumur bor merupakan program kerja pemerintah desa dengan memanfaatkan dana desa untuk kesejahteraan masyarakat yang masih kesulitan dalam mendapatkan air bersih.', 'files/IMG-20200531-WA0013.jpg');
 
 -- --------------------------------------------------------
 
@@ -404,6 +439,42 @@ CREATE TABLE `tbl_pengaduan` (
 INSERT INTO `tbl_pengaduan` (`id_pengaduan`, `tgl`, `nama`, `deskrispi`, `gambar`) VALUES
 ('SR-0001', '1970-01-01', 'Nabilah Syaufii', 'Sampah yang mengumpul di Rt. 03, mohon untuk pemerintah desa agar mengatasi masalah tersebut.', 'files/tumpukan-sampah_20180522_151203.jpg'),
 ('SR-0002', '2020-10-10', 'Budi', 'Terjadi Kerusuhan demonstrasi', 'files/PETA.PNG');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_penduduk`
+--
+
+CREATE TABLE `tb_penduduk` (
+  `id_penduduk` varchar(255) NOT NULL,
+  `nik` varchar(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `kk` varchar(20) NOT NULL,
+  `agama` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `tempat_lahir` varchar(20) NOT NULL,
+  `jenis_kelamin` varchar(50) NOT NULL,
+  `foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_penduduk`
+--
+
+INSERT INTO `tb_penduduk` (`id_penduduk`, `nik`, `nama`, `kk`, `agama`, `alamat`, `tanggal_lahir`, `tempat_lahir`, `jenis_kelamin`, `foto`) VALUES
+('IP-0001', '123456789', 'Srie ', '987654321', 'Islam', 'Kedaton', '1996-10-16', 'Bandar Lampung', 'Perempuan', 'files/Lambang_Kabupaten_Pringsewu.png');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `tb_penduduk`
+--
+ALTER TABLE `tb_penduduk`
+  ADD PRIMARY KEY (`id_penduduk`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

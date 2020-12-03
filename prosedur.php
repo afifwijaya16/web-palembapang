@@ -20,7 +20,7 @@
         
     <div class="row">
       <div class="col-sm-12">
-        <img src="images/blanko.jpg" class="img-fluid" alt="PROSEDUR">
+        <img src="images/nabila.jpg" class="img-fluid" alt="PROSEDUR">
       </div> 
     </div>                           
      </div>

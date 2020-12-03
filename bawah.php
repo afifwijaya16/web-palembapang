@@ -123,6 +123,12 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+  <script>
+      $(document).ready( function () {
+      $('#table_id').DataTable();
+  } );
+  </script>
   <script type="text/javascript">
 
 			function generateCalendar(d) {

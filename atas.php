@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 </head>
 
 <body>
@@ -51,33 +52,44 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a href="index" class="nav-link">Home</a>
+            <a href="index" class="nav-link" style="padding: 12px 1rem;">Home</a>
           </li>
-          <li class="nav-item active"><a href="berita" class="nav-link">Berita Desa</a></li>
           <li class="nav-item active">
             <div class="dropdown nav-item active">
               <a class="nav-link" style="background-color: transparent;border:transparent;padding: 12px 1rem;" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Informasi
+                Publikasi
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="berita" class="dropdown-item btn-sm">Berita Desa</a>
                 <a class="dropdown-item btn-sm" href="informasi">Sejarah</a>
                 <a class="dropdown-item btn-sm" href="visimisi">Visi Misi</a>
                 <?php include "admin/config.php"; $sql  = "SELECT * FROM tbl_informasi "; $rest = mysqli_query($koneksi,$sql); $data = mysqli_fetch_assoc($rest); ?>
                 <a class="dropdown-item btn-sm" href="admin/<?php echo $data['pdf'];?>">Profile Desa</a>
+                <a class="dropdown-item btn-sm" href="galeri">Galeri Desa</a>
               </div>
             </div>
           </li>
-          <li class="nav-item active"><a href="galeri" class="nav-link">Galeri Desa</a></li>
-          <li class="nav-item active"><a href="data" class="nav-link">Data Administratif</a></li>
-          <li class="nav-item active"><a href="pengaduan" class="nav-link">Pengaduan</a></li>
           <li class="nav-item active">
             <div class="dropdown nav-item active">
               <a class="nav-link" style=" background-color: transparent;padding: 12px 1rem;" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Layanan Surat
+                Data Kependudukan
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a href="data" class="dropdown-item btn-sm">Data Administratif</a>
+                  <a class="dropdown-item btn-sm" href="penduduk">Data Penduduk</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <div class="dropdown nav-item active">
+              <a class="nav-link" style=" background-color: transparent;padding: 12px 1rem;" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Administrasi Desa
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a href="pengaduan" class="dropdown-item btn-sm">Pengaduan</a>
                   <a class="dropdown-item btn-sm" href="prosedur">Prosedur Buat Surat Online</a>
                   <a class="dropdown-item btn-sm" href="download">Download Blanko Surat</a>
                   <a class="dropdown-item btn-sm" href="buat_surat">Buat Surat Online</a>
