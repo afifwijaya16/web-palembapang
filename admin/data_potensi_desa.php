@@ -150,7 +150,7 @@
                   <table class="table">
                     <thead class=" text-primary">
                         <th>
-                            Area Wisata
+                          Jenis Potensi Desa
                         </th>
                         <th>
                             Keberadaan

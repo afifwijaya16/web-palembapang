@@ -1,15 +1,7 @@
 <?php session_start(); ?>
-<?php
-  include "atas.php";
+<?php include "atas.php";  include "config.php"; ?>
 
-  include "config.php";
-    
- 
-?>
-
-<?php 
-
-if(isset($_SESSION['username'])) { ?>
+<?php if(isset($_SESSION['username'])) { ?>
 
 <div class="content">
   <div class="container-fluid">
@@ -48,7 +40,7 @@ if(isset($_SESSION['username'])) { ?>
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Area Wisata</label>
+                    <label class="bmd-label-floating">Jenis Potensi Desa</label>
                     <input type="text" class="form-control" required name="area_wisata">
                   </div>
                 </div>
@@ -79,7 +71,7 @@ if(isset($_SESSION['username'])) { ?>
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary pull-right">Input Penduduk</button>
+              <button type="submit" class="btn btn-primary pull-right">Input Data</button>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -93,14 +85,11 @@ if(isset($_SESSION['username'])) { ?>
   $('#datepicker').datepicker({
     uiLibrary: 'bootstrap4'
   });
-</script>
-
+</scr
 <?php } else { ?>
 <script language=javascript>
   alert('Login Terlebih Dahulu');
   document.location.href = "login.php";
 </script>
-
-
 <?php } ?>
 <?php include "bawah.php"; ?>
