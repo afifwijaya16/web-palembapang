@@ -56,6 +56,11 @@
                 <p>Berita Desa</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data_potensi_desa">
+                <p>Potensi Desa</p>
+              </a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">

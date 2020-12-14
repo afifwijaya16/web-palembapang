@@ -1,6 +1,8 @@
 <?php session_start(); ?>
-<?php include "atas.php";include "config.php"; ?>
-<?php if(isset($_SESSION['username'])) { ?>
+
+<?php include "atas.php"; include "config.php"; ?>
+
+<?php if(isset($_SESSION['username'])){ ?>
 <div class="wrapper ">
   <div class="sidebar" data-color="purple" data-background-color="white" data-image="assets/img/sidebar-1.jpg">
     <div class="logo">
@@ -35,44 +37,45 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item  active">
           <a href="#publikasisub" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="material-icons">supervised_user_circle</i>
             <p>Publikasi</p>
           </a>
-          <ul class="collapse list-unstyled" id="publikasisub">
+          <ul class="nav collapse list-unstyled" id="publikasisub">
             <li class="nav-item">
               <a class="nav-link" href="data_informasi">Informasi Desa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="data_galeri">Galeri Desa</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a class="nav-link" href="data_berita">
                 <p>Berita Desa</p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="data_potensi_desa">
                 <p>Potensi Desa</p>
               </a>
             </li>
           </ul>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="#layanansuratsub" data-toggle="collapse" aria-expanded="false" class="nav-link">
             <i class="material-icons">book</i>
             <p>Layanan Surat</p>
           </a>
-          <ul class="nav collapse list-unstyled" id="layanansuratsub">
+          <ul class="collapse list-unstyled" id="layanansuratsub">
             <li class="nav-item">
               <a class="nav-link" href="data_pengaduan">Pengaduan</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a class="nav-link" href="data_download">
                 <p>Download Surat</p>
               </a>
             </li>
+            
             <li class="nav-item ">
               <a class="nav-link" href="data_buat_surat">
                 <p>Buat Surat</p>
@@ -83,17 +86,17 @@
                 <p>Surat Izin Keramaian</p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a class="nav-link" href="data_surat_kematian">
                 <p>Surat Kematian</p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a class="nav-link" href="data_surat_domisili">
                 <p>Surat Domisili</p>
               </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item ">
               <a class="nav-link" href="data_surat_usaha">
                 <p>Surat Izin Usaha</p>
               </a>
@@ -124,65 +127,62 @@
           <span class="navbar-toggler-icon icon-bar"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end">
+
         </div>
       </div>
     </nav>
+
+
+
     <div class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary" align="center">
-                <h4 class="card-title ">Data Surat Izin Usaha </h4>
-                <p class="card-category"> Data Buat Surat Dari Masyarakat</p>
+                <a href="data_potensi_desa_input">
+                  <button type="button" class="btn btn-success">Tambah Data Potensi Desa </button>
+                </a>
+                <h4 class="card-title ">Data Potensi Desa </h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
-                      <th align="center">
-                        NIK
-                      </th>
-                      <th align="center">
-                        Nama Lengkap
-                      </th>
-                      <th align="center">
-                        Nama usaha
-                      </th>
-                      <th align="center">
-                        Alamat Usaha
-                      </th>
-                      <th align="center">
-                        Keterangan Usaha
-                      </th>
-                      <th align="center">
-                        Jumlah Modal
-                      </th>
-                      <th align="center">
-                        KTP
-                      </th>
-                      <th align="center">
-                        Tools
-                      </th>
+                        <th>
+                            Area Wisata
+                        </th>
+                        <th>
+                            Keberadaan
+                        </th>
+                        <th>
+                            Luas
+                        </th>
+                        <th>
+                            Pemanfaatan
+                        </th>
+                        <th>
+                            Tools
+                        </th>
                     </thead>
                     <tbody>
-                      <?php $sql  = "SELECT * FROM surat_usaha ORDER BY nik ";
-	                          $rest = mysqli_query($koneksi,$sql);
-                            while($data = mysqli_fetch_assoc($rest) ) { ?>
+                      <?php $sql  = "SELECT * FROM tbl_potensi_desa"; $rest = mysqli_query($koneksi,$sql);
+                        while($data = mysqli_fetch_assoc($rest) ) { ?>
                       <tr>
-                        <td align="center"> <?php echo $data['nik'];?></td>
-                        <td align="center"> <?php echo $data['nama'];?></td>
-                        <td align="center"> <?php echo $data['nama_usaha'];?></td>
-                        <td align="center"> <?php echo $data['alamat'];?></td>
-                        <td align="center"> <?php echo $data['keterangan_usaha'];?></td>
-                        <td align="center"> Rp. <?php echo number_format($data['jumlah_modal_usaha']) ;?></td>
+                        <td align="center"> <?php echo $data['area_wisata'];?></td>
+                        <td align="center"> <?php echo $data['keberadaan'];?></td>
+                        <td align="center"> <?php echo $data['luas'];?></td>
+                        <td align="center"> <?php echo $data['pemanfaatan'];?></td>
                         <td align="center">
-                          <a href="../<?php echo $data['file_surat']; ?>" target="_blank">
-                            <img src="../<?php echo $data['file_surat']; ?>" class="col-sm-6 img-thumbnail" />
-                          </a>
-                        </td>
-                        <td align="center">
-                          <a href="confirm_hapus_buat_surat_usaha?id=<?php echo $data['id_surat_usaha']?>">
+                          <!-- <a href="edit_potensi_desa?id=<?php echo $data['id_potensi_desa']?>">
+                            <button type="button" rel="tooltip" title="Edit Data"
+                              class="btn btn-primary btn-link btn-sm">
+                              <i class="material-icons">edit</i>
+                            </button>
+                          </a> -->
+
+                          <a href="confirm_hapus_potensi_desa?id=<?php echo $data['id_potensi_desa']?>">
+
                             <button type="button" rel="tooltip" title="Hapus Data"
                               class="btn btn-danger btn-link btn-sm">
                               <i class="material-icons">close</i>
@@ -200,6 +200,9 @@
         </div>
       </div>
     </div>
+
+
+
     <footer class="footer">
       <div class="container-fluid">
         <p>Desa Palembapang, Kecamatan Kalianda, Kabupaten Lampung Selatan, Provinsi Lampung, Indonesia</p>
@@ -207,10 +210,13 @@
     </footer>
   </div>
 </div>
+
+
+
 <?php } else { ?>
-    <script language=javascript>
-    alert('Login Terlebih Dahulu');
-    document.location.href = "login.php";
-    </script>
+<script language=javascript>
+  alert('Login Terlebih Dahulu');
+  document.location.href = "login.php";
+</script>
 <?php } ?>
 <?php include "bawah.php"; ?>

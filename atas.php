@@ -67,6 +67,7 @@
                 <?php include "admin/config.php"; $sql  = "SELECT * FROM tbl_informasi "; $rest = mysqli_query($koneksi,$sql); $data = mysqli_fetch_assoc($rest); ?>
                 <a class="dropdown-item btn-sm" href="admin/<?php echo $data['pdf'];?>">Profile Desa</a>
                 <a class="dropdown-item btn-sm" href="galeri">Galeri Desa</a>
+                <a class="dropdown-item btn-sm" href="potensi_desa">Potensi Desa</a>
               </div>
             </div>
           </li>
