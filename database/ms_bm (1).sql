@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Des 2020 pada 16.50
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 5.6.39
+-- Generation Time: Dec 14, 2020 at 05:32 AM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_domisili`
+-- Table structure for table `surat_domisili`
 --
 
 CREATE TABLE `surat_domisili` (
@@ -42,7 +41,7 @@ CREATE TABLE `surat_domisili` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `surat_domisili`
+-- Dumping data for table `surat_domisili`
 --
 
 INSERT INTO `surat_domisili` (`id_surat_domisili`, `nik`, `nama`, `tanggal_lahir`, `tempat_lahir`, `agama`, `pekerjaan`, `alamat`, `file_surat`, `deskripsi_surat`) VALUES
@@ -51,7 +50,7 @@ INSERT INTO `surat_domisili` (`id_surat_domisili`, `nik`, `nama`, `tanggal_lahir
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_izin_keramaian`
+-- Table structure for table `surat_izin_keramaian`
 --
 
 CREATE TABLE `surat_izin_keramaian` (
@@ -69,7 +68,7 @@ CREATE TABLE `surat_izin_keramaian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `surat_izin_keramaian`
+-- Dumping data for table `surat_izin_keramaian`
 --
 
 INSERT INTO `surat_izin_keramaian` (`id_keramaian`, `nik`, `nama`, `umur`, `pekerjaan`, `alamat`, `tokoh_pemuda`, `tokoh_masyarakat`, `tokoh_agama`, `file_surat`, `deskripsi_surat`) VALUES
@@ -78,7 +77,7 @@ INSERT INTO `surat_izin_keramaian` (`id_keramaian`, `nik`, `nama`, `umur`, `peke
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_kematian`
+-- Table structure for table `surat_kematian`
 --
 
 CREATE TABLE `surat_kematian` (
@@ -94,7 +93,7 @@ CREATE TABLE `surat_kematian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `surat_kematian`
+-- Dumping data for table `surat_kematian`
 --
 
 INSERT INTO `surat_kematian` (`id_kematian`, `nama`, `nik`, `umur`, `pekerjaan`, `alamat`, `nama_pelapor`, `deskripsi_surat`, `file_surat`) VALUES
@@ -103,7 +102,7 @@ INSERT INTO `surat_kematian` (`id_kematian`, `nama`, `nik`, `umur`, `pekerjaan`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_usaha`
+-- Table structure for table `surat_usaha`
 --
 
 CREATE TABLE `surat_usaha` (
@@ -118,7 +117,7 @@ CREATE TABLE `surat_usaha` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `surat_usaha`
+-- Dumping data for table `surat_usaha`
 --
 
 INSERT INTO `surat_usaha` (`id_surat_usaha`, `nama`, `nik`, `alamat`, `nama_usaha`, `keterangan_usaha`, `jumlah_modal_usaha`, `file_surat`) VALUES
@@ -127,19 +126,19 @@ INSERT INTO `surat_usaha` (`id_surat_usaha`, `nama`, `nik`, `alamat`, `nama_usah
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_berita`
+-- Table structure for table `tbl_berita`
 --
 
 CREATE TABLE `tbl_berita` (
   `id_berita` varchar(15) DEFAULT NULL,
   `judul` varchar(200) DEFAULT NULL,
   `tgl` date DEFAULT NULL,
-  `deskripsi` text,
+  `deskripsi` text DEFAULT NULL,
   `gambar` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_berita`
+-- Dumping data for table `tbl_berita`
 --
 
 INSERT INTO `tbl_berita` (`id_berita`, `judul`, `tgl`, `deskripsi`, `gambar`) VALUES
@@ -148,7 +147,7 @@ INSERT INTO `tbl_berita` (`id_berita`, `judul`, `tgl`, `deskripsi`, `gambar`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_buat_surat`
+-- Table structure for table `tbl_buat_surat`
 --
 
 CREATE TABLE `tbl_buat_surat` (
@@ -163,7 +162,7 @@ CREATE TABLE `tbl_buat_surat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_buat_surat`
+-- Dumping data for table `tbl_buat_surat`
 --
 
 INSERT INTO `tbl_buat_surat` (`id_surat`, `nik`, `nama_lengkap`, `alamat`, `no_handpone`, `jenis_surat`, `file_surat`, `deskripsi_surat`) VALUES
@@ -172,7 +171,7 @@ INSERT INTO `tbl_buat_surat` (`id_surat`, `nik`, `nama_lengkap`, `alamat`, `no_h
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data`
+-- Table structure for table `tbl_data`
 --
 
 CREATE TABLE `tbl_data` (
@@ -329,7 +328,7 @@ CREATE TABLE `tbl_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_data`
+-- Dumping data for table `tbl_data`
 --
 
 INSERT INTO `tbl_data` (`umum_a`, `umum_b`, `kondisi_a`, `kondisi_b`, `kondisi_c`, `kondisi_d`, `orbitas_a`, `orbitas_b`, `orbitas_c`, `pertanahan_a`, `pertanahan_b`, `pertanahan_c`, `kp_jp_laki`, `kp_jp_perempuan`, `kp_jp_kk`, `kp_jp_wni`, `kp_jp_wna`, `kp_jpma_a`, `kp_jpma_b`, `kp_jpma_c`, `kp_jpma_d`, `kp_jpmu_a`, `kp_jpmu_b`, `kp_jpmu_c`, `kp_jpmu_e`, `kp_jpmu_f`, `kp_jpmtp_a`, `kp_jpmtp_b`, `kp_jpmmp_a`, `kp_jpmmp_b`, `kp_jpmmp_c`, `kp_jpmmp_d`, `kp_jpmmp_e`, `kp_jpmmp_f`, `kp_jpmmp_g`, `kp_jpmmp_h`, `kp_jpmmp_i`, `kp_jpd_a`, `kp_jpd_b`, `kp_jpd_c`, `kp_jpd_d`, `kp_jpd_e`, `kp_jpd_f`, `kp_jpd_g`, `kp_prt_a`, `kp_prt_b`, `kp_jpm_a`, `kp_jpm_b`, `kp_jpm_c`, `kp_pmdb_a`, `kp_pmdb_b`, `kp_pmdb_c`, `kp_pmdb_d`, `kp_lmd_a`, `kp_lmd_b`, `kp_kd_a`, `kp_kd_b`, `kp_kkd_a`, `kp_kkd_b`, `kp_kdspd_a`, `kp_kdspd_b`, `kp_kdspd_c`, `kp_kdspd_d`, `kp_kdspd_e`, `kp_bdhp`, `kp_bdhp_a`, `kp_bdhp_b`, `kp_bdhp_c`, `kp_bdhp_d`, `bpd_asp_a`, `bpd_asp_b`, `bpd_asp_c`, `bpd_asp_d`, `bpd_asp_e`, `bpd_p_a`, `bpd_p_b`, `bpd_p_c`, `bpd_p_d`, `bpd_p_e`, `bpd_japc_a`, `bpd_japc_b`, `bpd_japc_c`, `bpd_japc_d`, `bpd_japc_e`, `bpd_jayp_a`, `bpd_jayp_b`, `bpd_pk_a`, `bpd_pk_b`, `bpd_pk_c`, `so_a`, `so_b`, `so_c`, `so_d`, `so_k_a`, `so_k_b`, `so_k_c`, `so_kk_a`, `so_kk_b`, `so_kk_c`, `pp_a`, `pp_b`, `pp_c`, `pp_d`, `pp_e`, `pp_f`, `pp_g`, `k_a`, `k_b`, `i_a`, `i_b`, `p8_a`, `p8_b`, `p9_a`, `p9_b`, `p10_a`, `p10_b`, `p10_c`, `p11_a`, `p11_b`, `p11_c`, `p12_a`, `p12_b`, `p12_c`, `p13_a`, `p13_b`, `p13_c`, `p13_d`, `p13_e`, `p14_a`, `p14_b`, `p14_c`, `p14_d`, `p15_a`, `p15_b`, `p17_a`, `p17_b`, `p17_c`, `p17_d`, `p17_e`, `p17_f`, `p18_a`, `p18_b`, `p19_a`, `p19_b`, `p19_c`, `d20_a`, `d20_c`, `d20_d`, `d20_f`, `d20_g`) VALUES
@@ -338,7 +337,7 @@ INSERT INTO `tbl_data` (`umum_a`, `umum_b`, `kondisi_a`, `kondisi_b`, `kondisi_c
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_download`
+-- Table structure for table `tbl_download`
 --
 
 CREATE TABLE `tbl_download` (
@@ -349,7 +348,7 @@ CREATE TABLE `tbl_download` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_download`
+-- Dumping data for table `tbl_download`
 --
 
 INSERT INTO `tbl_download` (`id_file`, `nama_file`, `ket`, `pdf`) VALUES
@@ -361,19 +360,19 @@ INSERT INTO `tbl_download` (`id_file`, `nama_file`, `ket`, `pdf`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_galeri`
+-- Table structure for table `tbl_galeri`
 --
 
 CREATE TABLE `tbl_galeri` (
   `id_galeri` varchar(15) DEFAULT NULL,
   `judul` varchar(200) DEFAULT NULL,
   `tgl_galeri` date DEFAULT NULL,
-  `deskripsi` text,
+  `deskripsi` text DEFAULT NULL,
   `gambar` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_galeri`
+-- Dumping data for table `tbl_galeri`
 --
 
 INSERT INTO `tbl_galeri` (`id_galeri`, `judul`, `tgl_galeri`, `deskripsi`, `gambar`) VALUES
@@ -382,7 +381,7 @@ INSERT INTO `tbl_galeri` (`id_galeri`, `judul`, `tgl_galeri`, `deskripsi`, `gamb
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_hak_akses`
+-- Table structure for table `tbl_hak_akses`
 --
 
 CREATE TABLE `tbl_hak_akses` (
@@ -391,7 +390,7 @@ CREATE TABLE `tbl_hak_akses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_hak_akses`
+-- Dumping data for table `tbl_hak_akses`
 --
 
 INSERT INTO `tbl_hak_akses` (`username`, `password`) VALUES
@@ -403,7 +402,7 @@ INSERT INTO `tbl_hak_akses` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_informasi`
+-- Table structure for table `tbl_informasi`
 --
 
 CREATE TABLE `tbl_informasi` (
@@ -412,7 +411,7 @@ CREATE TABLE `tbl_informasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_informasi`
+-- Dumping data for table `tbl_informasi`
 --
 
 INSERT INTO `tbl_informasi` (`nama_file`, `pdf`) VALUES
@@ -421,19 +420,19 @@ INSERT INTO `tbl_informasi` (`nama_file`, `pdf`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pengaduan`
+-- Table structure for table `tbl_pengaduan`
 --
 
 CREATE TABLE `tbl_pengaduan` (
   `id_pengaduan` varchar(15) DEFAULT NULL,
   `tgl` date DEFAULT NULL,
   `nama` varchar(200) DEFAULT NULL,
-  `deskrispi` text,
+  `deskrispi` text DEFAULT NULL,
   `gambar` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_pengaduan`
+-- Dumping data for table `tbl_pengaduan`
 --
 
 INSERT INTO `tbl_pengaduan` (`id_pengaduan`, `tgl`, `nama`, `deskrispi`, `gambar`) VALUES
@@ -443,7 +442,22 @@ INSERT INTO `tbl_pengaduan` (`id_pengaduan`, `tgl`, `nama`, `deskrispi`, `gambar
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_penduduk`
+-- Table structure for table `tbl_potensi_desa`
+--
+
+CREATE TABLE `tbl_potensi_desa` (
+  `id_potensi_desa` int(11) NOT NULL,
+  `area_wisata` varchar(100) DEFAULT NULL,
+  `keberadaan` varchar(100) DEFAULT NULL,
+  `luas` varchar(50) DEFAULT NULL,
+  `pemanfaatan` varchar(50) DEFAULT NULL,
+  `foto` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_penduduk`
 --
 
 CREATE TABLE `tb_penduduk` (
@@ -460,21 +474,37 @@ CREATE TABLE `tb_penduduk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_penduduk`
+-- Dumping data for table `tb_penduduk`
 --
 
 INSERT INTO `tb_penduduk` (`id_penduduk`, `nik`, `nama`, `kk`, `agama`, `alamat`, `tanggal_lahir`, `tempat_lahir`, `jenis_kelamin`, `foto`) VALUES
-('IP-0001', '123456789', 'Srie ', '987654321', 'Islam', 'Kedaton', '1996-10-16', 'Bandar Lampung', 'Perempuan', 'files/Lambang_Kabupaten_Pringsewu.png');
+('IP-0002', '1805181906870001', 'Nabilah Syaufii', '1897645646775', 'Islam', 'Jl. RA. Kartini No 52 Tanjung Karang Pusat, Kota Bandar Lampung 351116', '1997-03-05', 'Bekasi', 'Perempuan', 'files/download.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_penduduk`
+-- Indexes for table `tbl_potensi_desa`
+--
+ALTER TABLE `tbl_potensi_desa`
+  ADD PRIMARY KEY (`id_potensi_desa`);
+
+--
+-- Indexes for table `tb_penduduk`
 --
 ALTER TABLE `tb_penduduk`
   ADD PRIMARY KEY (`id_penduduk`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_potensi_desa`
+--
+ALTER TABLE `tbl_potensi_desa`
+  MODIFY `id_potensi_desa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
