@@ -1,8 +1,9 @@
 <?php error_reporting(E_ALL ^ (E_NOTICE | E_WARNING)); include "admin/config.php";
 
  $id_kematian = $_POST['id_kematian'];
- $nik = $_POST['nik'];
- $nama = $_POST['nama'];
+ $nama_penduduk = explode('.',$_POST['nama']);
+ $nik = $nama_penduduk[0];
+ $nama = $nama_penduduk[1];
  $alamat = $_POST['alamat'];
  $umur = $_POST['umur'];
  $pekerjaan = $_POST['pekerjaan'];
@@ -11,7 +12,6 @@
 
 if(
     $id_kematian =="" || 
-    $nik =="" || 
     $nama =="" ||
     $alamat =="" || 
     $umur =="" || 

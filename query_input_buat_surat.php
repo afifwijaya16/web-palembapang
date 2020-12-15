@@ -7,15 +7,16 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 include "admin/config.php";
 
  $id_surat = $_POST['id_surat'];
- $nik = $_POST['nik'];
- $nama_lengkap = $_POST['nama_lengkap'];
+ $nama_penduduk = explode('.',$_POST['nama']);
+ $nik = $nama_penduduk[0];
+ $nama_lengkap =  $nama_penduduk[1];
  $alamat = $_POST['alamat'];
  $no_handpone = $_POST['no_handpone'];
  $jenis_surat = $_POST['jenis_surat'];
  $deskripsi_surat = $_POST['deskripsi_surat'];
 
      
-if($id_surat=="" || $nik=="" || $nama_lengkap=="" || $alamat=="" || $no_handpone=="" || $jenis_surat =="" || $deskripsi_surat=="") {
+if($id_surat=="" || $nama_lengkap=="" || $alamat=="" || $no_handpone=="" || $jenis_surat =="" || $deskripsi_surat=="") {
     ?>
     <script language=javascript>
 	 alert("Masih Terdapat inputan Kosong");

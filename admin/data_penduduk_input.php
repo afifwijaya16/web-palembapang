@@ -119,6 +119,16 @@ if(isset($_SESSION['username'])) { ?>
                     </select>
                   </div>
                 </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Status</label>
+                    <select class="form-control" name="status">
+                      <option>---- Pilih Status ----</option>
+                      <option value="Hidup">Hidup</option>
+                      <option value="Mati">Mati</option>
+                    </select>
+                  </div>
+                </div>
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="bmd-label-floating">Alamat</label>

@@ -172,6 +172,9 @@
                         Jenis Kelamin
                       </th>
                       <th>
+                        Status
+                      </th>
+                      <th>
                         Tools
                       </th>
                     </thead>
@@ -186,13 +189,14 @@
                         </td>
                         <td align="center"> <?php echo $data['agama'];?></td>
                         <td align="center"> <?php echo $data['jenis_kelamin'];?></td>
+                        <td align="center"> <?php echo $data['status'];?></td>
                         <td align="center">
-                          <!-- <a href="edit_penduduk?id=<?php echo $data['id_penduduk']?>">
+                          <a href="edit_penduduk?id=<?php echo $data['id_penduduk']?>">
                             <button type="button" rel="tooltip" title="Edit Data"
                               class="btn btn-primary btn-link btn-sm">
                               <i class="material-icons">edit</i>
                             </button>
-                          </a> -->
+                          </a>
 
                           <a href="confirm_hapus_penduduk?id=<?php echo $data['id_penduduk']?>">
 

@@ -8,10 +8,6 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
 
 include "config.php";
-
-
-
-
  $id_galeri = $_POST['id_galeri'];
  $judul = $_POST['judul'];
  $tgl_galeri = date('Y-m-d', strtotime(str_replace('-', '/',  $_POST['tgl_galeri']))); 

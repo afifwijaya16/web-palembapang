@@ -9,6 +9,7 @@ include "config.php";
  $nik = $_POST['nik'];
  $kk = $_POST['kk'];
  $jenis_kelamin = $_POST['jenis_kelamin'];
+ $status = $_POST['status'];
  $agama = $_POST['agama'];
  $tempat_lahir = $_POST['tempat_lahir'];
  $tanggal_lahir = date('Y-m-d', strtotime(str_replace('-', '/',  $_POST['tanggal_lahir']))); 
@@ -36,6 +37,7 @@ if($id_penduduk=="" || $nama=="" || $alamat=="" ) { ?>
         nik,
         kk,
         jenis_kelamin,
+        status,
         agama,
         alamat,
         foto) VALUES(
@@ -46,6 +48,7 @@ if($id_penduduk=="" || $nama=="" || $alamat=="" ) { ?>
             '$nik',
             '$kk',
             '$jenis_kelamin',
+            '$status',
             '$agama',
             '$alamat',
             '$targetfolder'

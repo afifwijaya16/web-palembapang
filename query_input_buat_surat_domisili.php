@@ -1,8 +1,9 @@
 <?php error_reporting(E_ALL ^ (E_NOTICE | E_WARNING)); include "admin/config.php";
 
  $id_surat_domisili = $_POST['id_surat_domisili'];
- $nik = $_POST['nik'];
- $nama = $_POST['nama'];
+ $nama_penduduk = explode('.',$_POST['nama']);
+ $nik = $nama_penduduk[0];
+ $nama = $nama_penduduk[1];
  $alamat = $_POST['alamat'];
  $tanggal_lahir = $_POST['tanggal_lahir'];
  $tempat_lahir = $_POST['tempat_lahir'];
@@ -12,7 +13,6 @@
 
 if(
     $id_surat_domisili =="" || 
-    $nik =="" || 
     $nama =="" ||
     $alamat =="" || 
     $tanggal_lahir =="" || 

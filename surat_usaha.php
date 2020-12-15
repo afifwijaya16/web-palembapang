@@ -51,19 +51,19 @@ $kodeawal=substr($data['id_surat_usaha'],3,4)+1;
                         <input type="hidden" class="form-control" value="<?php echo $kode; ?>" readonly
                                     name="id_surat_usaha">
 
-                        <div class="col-md-6 text-white">
+                        <div class="col-md-4 text-white">
                             <div class="form-group">
-                                <label class="bmd-label-floating">NIK</label>
-                                <input type="text" class="form-control" required name="nik">
+                                <label class="bmd-label-floating">Nama Pembuat Surat</label>
+                                <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                                <select class="form-control" name="nama">
+                                    <option>---- Pilih Penduduk ----</option>
+                                    <option value="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['nik'];?> - <?php echo $data['nama'];?>
+                                    </option>
+                                </select>
+                                <?php } ?>
                             </div>
                         </div>
-
-                        <div class="col-md-6 text-white">
-                            <div class="form-group">
-                                <label class="bmd-label-floating">Nama Lengkap</label>
-                                <input type="text" class="form-control" required name="nama">
-                            </div>
-                        </div>
+                        
                         <div class="col-md-6 text-white">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Nama Usaha</label>

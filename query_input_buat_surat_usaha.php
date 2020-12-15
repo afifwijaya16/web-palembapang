@@ -1,8 +1,9 @@
 <?php error_reporting(E_ALL ^ (E_NOTICE | E_WARNING)); include "admin/config.php";
 
  $id_surat_usaha = $_POST['id_surat_usaha'];
- $nik = $_POST['nik'];
- $nama = $_POST['nama'];
+ $nama_penduduk = explode('.',$_POST['nama']);
+ $nik = $nama_penduduk[0];
+ $nama = $nama_penduduk[1];
  $alamat = $_POST['alamat'];
  $nama_usaha = $_POST['nama_usaha'];
  $jumlah_modal_usaha = $_POST['jumlah_modal_usaha'];
@@ -10,7 +11,6 @@
 
 if(
     $id_surat_usaha =="" || 
-    $nik =="" || 
     $nama =="" ||
     $alamat =="" || 
     $nama_usaha =="" || 

@@ -155,6 +155,27 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
+
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <a href="data_penduduk">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">supervised_user_circle</i>
+                  </div>
+                  <p class="card-category">Data Input</p>
+                  <h4 class="card-title">Data Penduduk</h4>
+                </div>
+              </a>
+              <div class="card-footer">
+                <div class="stats">
+                  <i class="material-icons">supervised_user_circle</i>
+                  Pengolahan Data Penduduk...
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats">
               <a href="data_informasi">
@@ -344,19 +365,26 @@
       datasets: [{
         label: 'Data',
         data: [ <
-          ? php
+          ?
+          php
           $j1 = mysqli_query($koneksi, "select * from tbl_arsip where jenis_arsip='ak'");
           echo mysqli_num_rows($j1); ?
-          > , <
-          ? php
+          >
+          , <
+          ?
+          php
           $j2 = mysqli_query($koneksi, "select * from tbl_arsip where jenis_arsip='sm'");
           echo mysqli_num_rows($j2); ?
-          > , <
-          ? php
+          >
+          , <
+          ?
+          php
           $j3 = mysqli_query($koneksi, "select * from tbl_arsip where jenis_arsip='sk'");
           echo mysqli_num_rows($j3); ?
-          > , <
-          ? php
+          >
+          , <
+          ?
+          php
           $j4 = mysqli_query($koneksi, "select * from tbl_arsip where jenis_arsip='bk'");
           echo mysqli_num_rows($j4); ?
           >

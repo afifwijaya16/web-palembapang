@@ -45,6 +45,18 @@
                                 <td>Jumlah Penduduk</td>
                                 <td align="center"><?php echo $rowcount; ?></td>
                             </tr>
+                            <?php $sql  = "SELECT * FROM tb_penduduk WHERE status='Hidup'"; $rest = mysqli_query($koneksi,$sql);
+                            $rowcount = mysqli_num_rows($rest); ?>
+                            <tr>
+                                <td>Penduduk Hidup</td>
+                                <td align="center"><?php echo $rowcount; ?></td>
+                            </tr>
+                            <?php $sql  = "SELECT * FROM tb_penduduk WHERE status='Mati'"; $rest = mysqli_query($koneksi,$sql);
+                            $rowcount = mysqli_num_rows($rest); ?>
+                            <tr>
+                                <td>Penduduk Mati</td>
+                                <td align="center"><?php echo $rowcount; ?></td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table" id="table_id">
