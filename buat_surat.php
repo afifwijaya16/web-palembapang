@@ -60,9 +60,9 @@ $sql=mysqli_query($koneksi,"select * from tbl_buat_surat order by id_surat DESC 
             <input type="hidden" class="form-control" value="<?php echo $kode; ?>" readonly name="id_surat">
             <div class="col-md-4 text-white">
                 <div class="form-group">
-                    <label class="bmd-label-floating">Nama Pembuat Surat</label>
+                    <label class="bmd-label-floating">Nama</label>
                     <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
-                    <select class="form-control" name="nama">
+                    <select class="form-control" name="nama" id="mark" required>
                         <option>---- Pilih Penduduk ----</option>
                         <option value="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['nik'];?> - <?php echo $data['nama'];?>
                         </option>
@@ -72,27 +72,22 @@ $sql=mysqli_query($koneksi,"select * from tbl_buat_surat order by id_surat DESC 
             </div>
 
 
-            <div class="col-md-4 text-white">
-              <div class="form-group">
-
-                <label class="bmd-label-floating">Alamat</label>
-                <input type="text" class="form-control" required name="alamat">
-
-
-
-
-              </div>
+              <div class="col-md-12 text-white">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Alamat</label>
+                    <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                    <select class="form-control" readonly name="alamat" id="alamat"  required>
+                        <option value="<?php echo $data['alamat'];?>" class="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['alamat'];?>
+                        </option>
+                    </select>
+                    <?php } ?>
+                </div>
             </div>
 
             <div class="col-md-4 text-white">
               <div class="form-group">
-
                 <label class="bmd-label-floating">No.Handpone/WA</label>
                 <input type="text" class="form-control" required name="no_handpone">
-
-
-
-
               </div>
             </div>
 
@@ -146,10 +141,11 @@ $sql=mysqli_query($koneksi,"select * from tbl_buat_surat order by id_surat DESC 
 </section>
 
 
+<script type="text/javascript" charset="utf-8">
+$(function(){
+   $("#alamat").chained("#mark"); 
+});
+</script>
 
 
-
-<?php
-
-  include "bawah.php";
-?>
+<?php include "bawah.php"; ?>

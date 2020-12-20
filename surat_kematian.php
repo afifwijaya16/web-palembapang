@@ -51,11 +51,11 @@ $kodeawal=substr($data['id_kematian'],3,4)+1;
                         <input type="hidden" class="form-control" value="<?php echo $kode; ?>" readonly
                                     name="id_kematian">
 
-                        <div class="col-md-4 text-white">
+                         <div class="col-md-4 text-white">
                             <div class="form-group">
-                                <label class="bmd-label-floating">Nama Pembuat Surat</label>
+                                <label class="bmd-label-floating">Nama</label>
                                 <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
-                                <select class="form-control" name="nama">
+                                <select class="form-control" name="nama" id="mark" required>
                                     <option>---- Pilih Penduduk ----</option>
                                     <option value="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['nik'];?> - <?php echo $data['nama'];?>
                                     </option>
@@ -64,19 +64,46 @@ $kodeawal=substr($data['id_kematian'],3,4)+1;
                             </div>
                         </div>
 
-                        <div class="col-md-4 text-white">
+
+                         <div class="col-md-12 text-white">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Alamat</label>
-                                <input type="text" class="form-control" required name="alamat">
+                                <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                                <select class="form-control" readonly name="alamat" id="alamat"  required>
+                                    <option value="<?php echo $data['alamat'];?>" class="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['alamat'];?>
+                                    </option>
+                                </select>
+                                <?php } ?>
                             </div>
                         </div>
 
-                        <div class="col-md-4 text-white">
+                         <div class="col-md-4 text-white">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Umur</label>
-                                <input type="text" class="form-control" required name="umur">
+                                <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                                <select class="form-control" readonly name="umur" id="tanggal_lahir" required>
+                                    <option value="<?php $a = $data['tanggal_lahir'];
+                                        $tanggal = new DateTime($a);
+                                        $today = new DateTime('today');
+                                        $y = $today->diff($tanggal)->y;
+                                        echo $y;
+                                    ?>" 
+                                    class="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>">
+                                    <?php
+                                        $a = $data['tanggal_lahir'];
+                                        $tanggal = new DateTime($a);
+                                        $today = new DateTime('today');
+                                        $y = $today->diff($tanggal)->y;
+                                        echo $y;
+                                    ?>
+                                    </option>
+                                    
+                                </select>
+                                <?php } ?>
+                                
                             </div>
                         </div>
+
 
                         <div class="col-md-4 text-white">
                             <div class="form-group">
@@ -118,7 +145,12 @@ $kodeawal=substr($data['id_kematian'],3,4)+1;
     </div>
 </section>
 
-
+<script type="text/javascript" charset="utf-8">
+$(function(){
+   $("#alamat").chained("#mark"); 
+   $("#tanggal_lahir").chained("#mark"); 
+});
+</script>
 
 
 

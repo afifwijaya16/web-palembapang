@@ -55,7 +55,7 @@ $kodeawal=substr($data['id_surat_domisili'],3,4)+1;
                             <div class="form-group">
                                 <label class="bmd-label-floating">Nama Pembuat Surat</label>
                                 <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
-                                <select class="form-control" name="nama">
+                                <select class="form-control" name="nama" id="mark" required>
                                     <option>---- Pilih Penduduk ----</option>
                                     <option value="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['nik'];?> - <?php echo $data['nama'];?>
                                     </option>
@@ -67,30 +67,39 @@ $kodeawal=substr($data['id_surat_domisili'],3,4)+1;
                         <div class="col-md-4 text-white">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Tanggal lahir</label>
-                                <input type="date" class="form-control" required name="tanggal_lahir">
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-white">
-                            <div class="form-group">
-                                <label class="bmd-label-floating">Tempat lahir</label>
-                                <input type="text" class="form-control" required name="tempat_lahir">
+                               <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                                <select class="form-control" readonly name="tanggal_lahir" id="tanggal_lahir" required>
+                                    <option value="<?php echo $data['tanggal_lahir'];?>" class="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['tanggal_lahir'];?>
+                                    </option>
+                                </select>
+                                <?php } ?>
                             </div>
                         </div>
 
-                        <div class="col-md-4 text-white">
+                         <div class="col-md-4 text-white">
                             <div class="form-group">
-                                <label class="bmd-label-floating">Agama</label>
-                                <select class="form-control" name="agama">
-                                    <option>---- Pilih Agama ----</option>
-                                    <option value="Islam">Islam</option>
-                                    <option value="Kristen">Kristen</option>
-                                    <option value="Katolik">Katolik</option>
-                                    <option value="Hindu">Hindu</option>
-                                    <option value="Budha">Budha</option>
-                                    <option value="Lainnya">Lainnya</option>
+                                <label class="bmd-label-floating">Tempat lahir</label>
+                               <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                                <select class="form-control" readonly name="tempat_lahir" id="tempat_lahir"  required>
+                                    <option value="<?php echo $data['tempat_lahir'];?>" class="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['tempat_lahir'];?>
+                                    </option>
                                 </select>
+                                <?php } ?>
                             </div>
                         </div>
+
+                         <div class="col-md-4 text-white">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Agama</label>
+                               <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                                <select class="form-control" readonly name="agama" id="agama"  required>
+                                    <option value="<?php echo $data['agama'];?>" class="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['agama'];?>
+                                    </option>
+                                </select>
+                                <?php } ?>
+                            </div>
+                        </div>
+
                         <div class="col-md-4 text-white">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Pekerjaan</label>
@@ -101,7 +110,12 @@ $kodeawal=substr($data['id_surat_domisili'],3,4)+1;
                         <div class="col-md-12 text-white">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Alamat</label>
-                                <input type="text" class="form-control" required name="alamat">
+                                <?php include "admin/config.php"; $sql  = "SELECT * FROM tb_penduduk ORDER BY nik "; $rest = mysqli_query($koneksi,$sql); while($data = mysqli_fetch_assoc($rest) ) {  ?>
+                                <select class="form-control" readonly name="alamat" id="alamat"  required>
+                                    <option value="<?php echo $data['alamat'];?>" class="<?php echo $data['nik'];?>.<?php echo $data['nama'];?>"><?php echo $data['alamat'];?>
+                                    </option>
+                                </select>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="col-md-4 text-white">
@@ -133,6 +147,12 @@ $kodeawal=substr($data['id_surat_domisili'],3,4)+1;
 
 
 
-
-
+<script type="text/javascript" charset="utf-8">
+$(function(){
+   $("#tanggal_lahir").chained("#mark"); 
+   $("#tempat_lahir").chained("#mark"); 
+   $("#agama").chained("#mark"); 
+   $("#alamat").chained("#mark"); 
+});
+</script>
 <?php include "bawah.php"; ?>
